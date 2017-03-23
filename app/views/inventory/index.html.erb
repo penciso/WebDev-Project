@@ -1,0 +1,91 @@
+<head>
+<style>
+table {
+    width:100%;
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+</head>
+
+<div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+    
+
+      <div class="masthead">
+        <h1 class="text-muted">Triple-J Grocery</h1>
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="\products">Home</a></li>
+            <li><a href="\products\new">Add Item</a></li>
+            <li><a href="\inventory\index">Items</a></li>
+          
+ 
+          </ul>
+        </nav>
+        <%= form_tag('/inventory/index', :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+        <%= submit_tag "Search" %>
+        <% end %>
+
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+      
+
+  
+	<center><table id="t01">
+<tr>
+    <th>Product Id</th>
+    <th>Product Name</th> 
+    <th>Price</th>
+    <th>Stock</th>
+    <th>Supplier</th>
+    <th>Delivery Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    
+  </tr>
+<%@product.each {%>
+<% |c| %>
+  
+  <tr>
+    <td><%=c.product_id%></td>
+    <td><%=c.product_name%></td>
+    <td><%=c.product_price%></td>
+    <td><%=c.product_stock%></td>
+    <td><%=c.supplier%></td>
+    <td><%=c.delivery_date%></td>
+    <td><%= link_to 'Edit', edit_product_path(c)%></td>
+    <td><%= link_to 'Delete', c ,method: :delete%></td>
+
+    
+  </tr>
+  <%}%>
+
+  
+</table></center>
+      </div>
+      
+
+

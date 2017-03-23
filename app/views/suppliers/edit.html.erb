@@ -1,0 +1,48 @@
+
+<div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h1 class="text-muted">Triple-J Grocery</h1>
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="\products">Home</a></li>
+            
+           
+           
+          </ul>
+        </nav>
+      </div>
+
+      
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+
+<center><%= form_for @supplier do |f|%>
+
+	<%= f.label :Supplier_Name%><br \>
+	<%= f.text_field :supplier_name%><br \><br \>
+
+	<%= f.label :Supplier_Address%><br \>
+	<%= f.text_field :supplier_address%><br \><br \>
+
+	<%= f.label :Supplier_Manager%><br \>
+	<%= f.text_field :supplier_manager%><br \><br \>
+
+	<%= f.label :Contact_Number%><br \>
+	<%= f.text_field :contact_number%><br \><br \>
+
+	
+
+	
+
+	
+	<%= f.submit 'Save'%><br \> <br \>
+
+	
+
+	<%end%></center>
+
+	</div>

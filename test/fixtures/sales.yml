@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_ordered: MyString
+  ordered_price: 1
+  number_of_items: 1
+  ordered_amount: 1
+  ordered_total: 1
+
+two:
+  item_ordered: MyString
+  ordered_price: 1
+  number_of_items: 1
+  ordered_amount: 1
+  ordered_total: 1

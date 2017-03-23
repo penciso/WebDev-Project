@@ -1,0 +1,64 @@
+<div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h1 class="text-muted">Triple-J Grocery</h1>
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="\inventory\index">Back</a></li>
+            <li><a href="\products">Home</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+      	<center><%= form_for @product do |f|%>
+
+      	<% if @product.errors.any? %>
+      	<h2>Errors:</h2>
+      	<ul>
+      	<% @product.errors.full_messages.each do |message|%>
+      	<%=message%><br>
+      	<%end%>
+      	</ul>
+      	<%end%>
+
+
+	<%= f.label :Product_Id%><br \>
+	<%= f.text_field :product_id%><br \><br \>
+
+	<%= f.label :Product_Name%><br \>
+	<%= f.text_field :product_name%><br \><br \>
+
+	<%= f.label :Price%><br \>
+	<%= f.text_field :product_price%><br \><br \>
+
+	<%= f.label :Stock%><br \>
+	<%= f.text_field :product_stock%><br \><br \>
+
+  
+	<%= f.label :Supplier%><br \>
+
+
+	<%= f.select(:supplier,options_for_select([['101 Marketing', '101 Marketing'],['James Marketing' , 'James Marketing']]),{include_blank: true})%><br \><br \>
+  
+
+	<%= f.label :Delivery_Date%><br \>
+	<%= f.date_select :delivery_date %><br \><br \>
+
+	
+
+	<%= f.submit 'Save'%><br \> 
+
+	
+
+<%end%></center>
+
+	</div>
+
+
+	
+
+

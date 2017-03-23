@@ -1,0 +1,6 @@
+<%@sale.each {%>
+<% |c| %>
+    <h3><%=link_to c.item_ordered, sale_path(c)%></h3>|<%=link_to 'Sold One', "/sales/#{c.id}/sold"%> <br \>
+    
+    <%}%>
+
